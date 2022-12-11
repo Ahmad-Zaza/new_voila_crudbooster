@@ -1,4 +1,4 @@
-<?php namespace crocodicstudio\crudbooster\controllers;
+<?php namespace voila_crudbooster\crudbooster\controllers;
 
 use CRUDBooster;
 use Illuminate\Support\Facades\Cache;
@@ -52,10 +52,10 @@ class SettingsController extends CBController
 			function show_radio_data() {
 				var cit = $('#content_input_type').val();
 				if(cit == 'radio' || cit == 'select') {
-					$('#form-group-dataenum').show();	
+					$('#form-group-dataenum').show();
 				}else{
 					$('#form-group-dataenum').hide();
-				}					
+				}
 			}
 			$('#content_input_type').change(show_radio_data);
 			show_radio_data();

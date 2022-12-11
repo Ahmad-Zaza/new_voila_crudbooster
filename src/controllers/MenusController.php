@@ -1,4 +1,4 @@
-<?php namespace crocodicstudio\crudbooster\controllers;
+<?php namespace voila_crudbooster\crudbooster\controllers;
 
 use CRUDBooster;
 use Illuminate\Support\Facades\Cache;
@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Excel;
 use Illuminate\Support\Facades\PDF;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
-use crocodicstudio\crudbooster\fonts\Fontawesome;
+use voila_crudbooster\crudbooster\fonts\Fontawesome;
 
 class MenusController extends CBController
 {
@@ -73,7 +73,7 @@ class MenusController extends CBController
 				}
 
 
-				function format(icon) {          
+				function format(icon) {
 	                  var originalOption = icon.element;
 	                  var label = $(originalOption).text();
 	                  var val = $(originalOption).val();
@@ -128,10 +128,10 @@ class MenusController extends CBController
 						$('#form-group-path label').append('<span class=\"text-danger\" title=\"".cbLang('this_field_is_required')."\">*</span>');
 
 						$('#form-group-path').show();
-						$('#form-group-module_slug,#form-group-statistic_slug').hide();					
+						$('#form-group-module_slug,#form-group-statistic_slug').hide();
 					}else {
 						$('#module_slug,#statistic_slug').prop('required',false);
-						
+
 						$('#path').prop('required',true);
 						$('#form-group-path label .text-danger').remove();
 						$('#form-group-path label').append('<span class=\"text-danger\" title=\"".cbLang('this_field_is_required')."\">*</span>');

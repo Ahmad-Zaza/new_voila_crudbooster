@@ -1,10 +1,10 @@
 <?php
 
 
-namespace crocodicstudio\crudbooster\controllers;
+namespace voila_crudbooster\crudbooster\controllers;
 
 
-use crocodicstudio\crudbooster\helpers\CB;
+use voila_crudbooster\crudbooster\helpers\CB;
 use Illuminate\Support\Facades\Cache;
 
 class ApiAuthorizationController extends Controller

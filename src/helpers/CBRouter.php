@@ -1,15 +1,15 @@
 <?php
 
-namespace crocodicstudio\crudbooster\helpers;
+namespace voila_crudbooster\crudbooster\helpers;
 
 
-use crocodicstudio\crudbooster\middlewares\CBAuthAPI;
+use voila_crudbooster\crudbooster\middlewares\CBAuthAPI;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 class CBRouter
 {
-    private static $cb_namespace = '\crocodicstudio\crudbooster\controllers';
+    private static $cb_namespace = '\voila_crudbooster\crudbooster\controllers';
 
     public static function getCBControllerFiles() {
         $controllers = glob(__DIR__.'/../controllers/*.php');
@@ -68,7 +68,7 @@ class CBRouter
 
     private static function userControllerRoute() {
         Route::group([
-            'middleware' => ['web', '\crocodicstudio\crudbooster\middlewares\CBBackend'],
+            'middleware' => ['web', '\voila_crudbooster\crudbooster\middlewares\CBBackend'],
             'prefix' => config('crudbooster.ADMIN_PATH'),
             'namespace' => 'App\Http\Controllers',
         ], function () {
@@ -102,7 +102,7 @@ class CBRouter
 
     private static function cbRoute() {
         Route::group([
-            'middleware' => ['web', '\crocodicstudio\crudbooster\middlewares\CBBackend'],
+            'middleware' => ['web', '\voila_crudbooster\crudbooster\middlewares\CBBackend'],
             'prefix' => config('crudbooster.ADMIN_PATH'),
             'namespace' => static::$cb_namespace,
         ], function () {

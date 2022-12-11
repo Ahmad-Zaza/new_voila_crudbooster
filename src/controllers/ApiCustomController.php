@@ -1,4 +1,4 @@
-<?php namespace crocodicstudio\crudbooster\controllers;
+<?php namespace voila_crudbooster\crudbooster\controllers;
 
 use CRUDbooster;
 use Illuminate\Support\Facades\DB;

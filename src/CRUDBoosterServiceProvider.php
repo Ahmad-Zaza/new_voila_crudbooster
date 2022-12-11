@@ -1,12 +1,12 @@
-<?php namespace crocodicstudio\crudbooster;
+<?php namespace voila_crudbooster\crudbooster;
 
-use crocodicstudio\crudbooster\commands\CrudboosterVersionCommand;
-use crocodicstudio\crudbooster\commands\Mailqueues;
+use voila_crudbooster\crudbooster\commands\CrudboosterVersionCommand;
+use voila_crudbooster\crudbooster\commands\Mailqueues;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
-use crocodicstudio\crudbooster\commands\CrudboosterInstallationCommand;
-use crocodicstudio\crudbooster\commands\CrudboosterUpdateCommand;
+use voila_crudbooster\crudbooster\commands\CrudboosterInstallationCommand;
+use voila_crudbooster\crudbooster\commands\CrudboosterUpdateCommand;
 use Illuminate\Foundation\AliasLoader;
 use App;
 
@@ -20,8 +20,8 @@ class CRUDBoosterServiceProvider extends ServiceProvider
      */
 
     public function boot()
-    {        
-                                
+    {
+
         $this->loadViewsFrom(__DIR__.'/views', 'crudbooster');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         $this->loadTranslationsFrom(__DIR__.'/localization','crudbooster');
@@ -45,8 +45,8 @@ class CRUDBoosterServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {                                   
-        require __DIR__.'/helpers/Helper.php';      
+    {
+        require __DIR__.'/helpers/Helper.php';
 
         $this->mergeConfigFrom(__DIR__.'/configs/crudbooster.php','crudbooster');
 
@@ -63,10 +63,10 @@ class CRUDBoosterServiceProvider extends ServiceProvider
         $loader->alias('PDF', 'Barryvdh\DomPDF\Facade');
         $loader->alias('Excel', 'Maatwebsite\Excel\Facades\Excel');
         $loader->alias('Image', 'Intervention\Image\ImageManagerStatic');
-        $loader->alias('CRUDBooster', 'crocodicstudio\crudbooster\helpers\CRUDBooster');
-        $loader->alias('CB', 'crocodicstudio\crudbooster\helpers\CB');
+        $loader->alias('CRUDBooster', 'voila_crudbooster\crudbooster\helpers\CRUDBooster');
+        $loader->alias('CB', 'voila_crudbooster\crudbooster\helpers\CB');
     }
-   
+
     private function registerSingleton()
     {
         $this->app->singleton('crudbooster', function ()
@@ -77,7 +77,7 @@ class CRUDBoosterServiceProvider extends ServiceProvider
         $this->app->singleton('crudboosterinstall',function() {
             return new CrudboosterInstallationCommand;
         });
-        
+
         $this->app->singleton('crudboosterupdate',function() {
             return new CrudboosterUpdateCommand;
         });

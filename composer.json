@@ -1,5 +1,5 @@
 {
-    "name": "crocodicstudio/crudbooster",
+    "name": "voila_crudbooster/crudbooster",
     "description": "CRUDBooster Is CRUD Generator Based On Laravel Easy To Make An Advanced Backend",
     "type": "library",
     "license": "MIT",
@@ -29,13 +29,13 @@
     },
     "autoload": {
         "psr-4": {
-          "crocodicstudio\\crudbooster\\": "src/"
+          "voila_crudbooster\\crudbooster\\": "src/"
         }
       },
     "extra": {
         "laravel": {
             "providers": [
-                "crocodicstudio\\crudbooster\\CRUDBoosterServiceProvider"
+                "voila_crudbooster\\crudbooster\\CRUDBoosterServiceProvider"
             ]
         }
     }

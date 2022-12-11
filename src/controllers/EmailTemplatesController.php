@@ -1,10 +1,10 @@
-<?php namespace crocodicstudio\crudbooster\controllers;
+<?php namespace voila_crudbooster\crudbooster\controllers;
 
 use CRUDBooster;
 use Illuminate\Support\Facades\Excel;
 use Illuminate\Support\Facades\PDF;
 
-class EmailTemplatesController extends \crocodicstudio\crudbooster\controllers\CBController
+class EmailTemplatesController extends \voila_crudbooster\crudbooster\controllers\CBController
 {
     public function cbInit()
     {
